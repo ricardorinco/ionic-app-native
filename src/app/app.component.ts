@@ -1,23 +1,49 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 
-import { Platform } from 'ionic-angular';
+import { MenuController, Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { PageModel } from './models/page.model';
 
 import { HomePage } from './pages/home/home.page';
 
 @Component({
-  templateUrl: 'app.component.html'
+  templateUrl: './app.component.html'
 })
-export class MyApp {
+export class MyApp implements AfterViewInit {
 
+  @ViewChild(Nav) navController: Nav;
+
+  public pages: PageModel[];
   public rootPage:any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(
+    public menuController: MenuController,
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen
+  ) {
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+
+    this.setPages();
+  }
+
+  ngAfterViewInit() {
+    this.menuController.open('menu1');
+  }
+
+  public openPage(page: PageModel) {
+    this.navController.setRoot(page.component);
+  }
+
+  private setPages() {
+    this.pages = [
+      { title: 'Home', component: HomePage }
+    ]
   }
 }
 

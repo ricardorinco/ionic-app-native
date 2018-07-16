@@ -30,13 +30,7 @@ Install the dependencies and start the application.
 ### run
 
 ```sh
-    ionic serve
-```
-
-### browser
-
-```sh
-http://localhost:8100
+    ionic cordova run android --prod --device
 ```
 
 ### Dependencies
