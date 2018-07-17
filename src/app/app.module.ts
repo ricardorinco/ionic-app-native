@@ -12,12 +12,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { ComponentsModule } from './shared/components/components.module';
 
+import { BarcodeScannerService } from './shared/services/barcode-scanner/barcode-scanner.service';
+
 import { MyApp } from './app.component';
 
+import { BarcodeScannerPage } from './pages/barcode-scanner/barcode-scanner.page';
 import { HomePage } from './pages/home/home.page';
 
 @NgModule({
   declarations: [
+    BarcodeScannerPage,
     HomePage,
     MyApp
   ],
@@ -30,11 +34,13 @@ import { HomePage } from './pages/home/home.page';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    BarcodeScannerPage,
+    HomePage,
+    MyApp
   ],
   providers: [
     BarcodeScanner,
+    BarcodeScannerService,
     Camera,
     File,
     FilePath,

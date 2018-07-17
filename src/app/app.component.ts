@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { PageModel } from './models/page.model';
 
+import { BarcodeScannerPage } from './pages/barcode-scanner/barcode-scanner.page';
 import { HomePage } from './pages/home/home.page';
 
 @Component({
@@ -42,7 +43,8 @@ export class MyApp implements AfterViewInit {
 
   private setPages() {
     this.pages = [
-      { title: 'Home', component: HomePage }
+      { title: 'Home', component: HomePage },
+      { title: 'Barcode Scanner', component: BarcodeScannerPage }
     ]
   }
 }

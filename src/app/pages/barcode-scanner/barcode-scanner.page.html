@@ -1,0 +1,11 @@
+<ion-header>
+  <custom-header [title]="'Barcode Scanner'"></custom-header>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button block color="primary" (click)="onGetBarcode()">Barcode Scanner</button>
+
+  <div *ngIf="barcodeResult">
+    {{ barcodeResult | json }}
+  </div>
+</ion-content>
