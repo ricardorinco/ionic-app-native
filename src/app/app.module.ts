@@ -13,15 +13,19 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { ComponentsModule } from './shared/components/components.module';
 
 import { BarcodeScannerService } from './shared/services/barcode-scanner/barcode-scanner.service';
+import { CameraService } from './shared/services/camera/camera.service';
+import { FilePathService } from './shared/services/file-path/file-path.service';
 
 import { MyApp } from './app.component';
 
 import { BarcodeScannerPage } from './pages/barcode-scanner/barcode-scanner.page';
+import { CameraPage } from './pages/camera/camera.page';
 import { HomePage } from './pages/home/home.page';
 
 @NgModule({
   declarations: [
     BarcodeScannerPage,
+    CameraPage,
     HomePage,
     MyApp
   ],
@@ -35,6 +39,7 @@ import { HomePage } from './pages/home/home.page';
   bootstrap: [IonicApp],
   entryComponents: [
     BarcodeScannerPage,
+    CameraPage,
     HomePage,
     MyApp
   ],
@@ -42,8 +47,10 @@ import { HomePage } from './pages/home/home.page';
     BarcodeScanner,
     BarcodeScannerService,
     Camera,
+    CameraService,
     File,
     FilePath,
+    FilePathService,
     FileTransfer,
     StatusBar,
     SplashScreen,

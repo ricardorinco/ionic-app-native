@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PageModel } from './models/page.model';
 
 import { BarcodeScannerPage } from './pages/barcode-scanner/barcode-scanner.page';
+import { CameraPage } from './pages/camera/camera.page';
 import { HomePage } from './pages/home/home.page';
 
 @Component({
@@ -17,7 +18,7 @@ export class MyApp implements AfterViewInit {
   @ViewChild(Nav) navController: Nav;
 
   public pages: PageModel[];
-  public rootPage:any = HomePage;
+  public rootPage: any = HomePage;
 
   constructor(
     public menuController: MenuController,
@@ -44,7 +45,8 @@ export class MyApp implements AfterViewInit {
   private setPages() {
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Barcode Scanner', component: BarcodeScannerPage }
+      { title: 'Barcode Scanner', component: BarcodeScannerPage },
+      { title: 'Camera', component: CameraPage }
     ]
   }
 }
